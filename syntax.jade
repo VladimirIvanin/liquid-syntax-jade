@@ -1,0 +1,45 @@
+mixin for(item, array)
+  = "\n"
+  | {% for !{item} in !{array} %}
+mixin endFor()
+  = "\n"
+  | {% endfor %}
+mixin unless(condition)
+  = "\n"
+  | {% unless !{condition} %}
+mixin endUnless()
+  = "\n"
+  | {% endunless %}
+mixin startIf(condition)
+  = "\n"
+  | {% if !{condition} %}
+mixin else()
+  = "\n"
+  | {% else %}
+mixin endIf()
+  = "\n"
+  | {% endif %}
+mixin assign(name, value, filter)
+  = "\n"
+  | {% assign #{name} = '!{value}' !{filter} %}
+mixin assignWithVar(name, value, filter)
+  = "\n"
+  | {% assign #{name} = !{value} !{filter} %}
+mixin include(snippet, arg)
+  = "\n"
+  | {% include '!{snippet}' !{arg} %}
+mixin capture(_variable, value)
+  = "\n"
+  | {% capture !{_variable} %}!{value}{% endcapture %}
+mixin getVar(_variable)
+  = "\n"
+  | {{ !{_variable} }}
+mixin comment (strings)
+  = "\n"
+  |{% comment %}
+  each comment in strings
+    = "\n"
+    = "  " + comment
+  = "\n"
+  |{% endcomment %}
+  
