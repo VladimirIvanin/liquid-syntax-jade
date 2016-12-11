@@ -1,2 +1,1 @@
-# liquid-syntax-jade
-Синтаксис liquid
+# Синтаксис liquid в виде jade/pug миксинов
